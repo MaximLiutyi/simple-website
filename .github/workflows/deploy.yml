@@ -24,7 +24,7 @@ jobs:
             sudo mkdir -p /home/${USER}/simple
             sudo chown ${USER}:${USER} /home/${USER}/simple
           "
-          scp -o StrictHostKeyChecking=no -i private_key ./index.html ${USER}@${HOST}:/home/${USER}/simple/
+          scp -o StrictHostKeyChecking=no -i private_key ./index.html ./styles.css ${USER}@${HOST}:/home/${USER}/simple/
           ssh -o StrictHostKeyChecking=no -i private_key ${USER}@${HOST} "
             sudo systemctl restart nginx
           "
