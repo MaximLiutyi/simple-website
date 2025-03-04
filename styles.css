@@ -1,45 +1,45 @@
 body {
-    font-family: 'Poppins', Arial, sans-serif; /* Додано сучасний шрифт */
-    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Гарний градієнтний фон */
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
     text-align: center;
     padding: 50px;
-    min-height: 100vh; /* Щоб фон заповнював всю висоту */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0; /* Прибираємо стандартні відступи */
+    margin: 0;
 }
 
 h1 {
-    color: #ffffff; /* Білий колір для контрасту */
+    color: #ffffff;
     font-size: 48px;
-    font-weight: 700; /* Жирніший шрифт */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* М'яка тінь */
-    background: rgba(44, 62, 80, 0.8); /* Напівпрозорий фон */
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    background: rgba(44, 62, 80, 0.8);
     padding: 15px 30px;
-    border-radius: 25px; /* Закруглені кути */
-    display: inline-block; /* Щоб фон облягав текст */
-    transition: transform 0.3s ease; /* Плавна анімація */
+    border-radius: 25px;
+    display: inline-block;
+    transition: transform 0.3s ease;
 }
 
 h1:hover {
-    transform: scale(1.05); /* Легке збільшення при наведенні */
+    transform: scale(1.05);
 }
 
 p {
-    color: #34495e; /* Темніший, приємний колір */
+    color: #34495e;
     font-size: 24px;
-    line-height: 1.6; /* Більший міжрядковий інтервал */
-    max-width: 600px; /* Обмеження ширини для читабельності */
-    margin: 20px auto; /* Центрування і відступи */
-    background: rgba(255, 255, 255, 0.9); /* Білий напівпрозорий фон */
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.9);
     padding: 20px;
-    border-radius: 15px; /* Закруглені кути */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* М'яка тінь */
-    transition: all 0.3s ease; /* Плавна анімація */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 p:hover {
-    transform: translateY(-5px); /* Легкий підйом при наведенні */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Посилена тінь */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
