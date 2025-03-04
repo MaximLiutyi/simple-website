@@ -1,14 +1,44 @@
 body {
-    background-color: #000000;
-    color: #ffffff;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Гарний градієнтний фон */
     text-align: center;
-    padding: 20px;
+    padding: 50px;
+    min-height: 100vh; /* Щоб фон заповнював всю висоту */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0; /* Прибираємо стандартні відступи */
 }
 
 h1 {
-    color: #ffffff;
+    color: #ffffff; /* Білий колір для контрасту */
+    font-size: 48px;
+    font-weight: 700; /* Жирніший шрифт */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* М'яка тінь */
+    background: rgba(44, 62, 80, 0.8); /* Напівпрозорий фон */
+    padding: 15px 30px;
+    border-radius: 25px; /* Закруглені кути */
+    display: inline-block; /* Щоб фон облягав текст */
+    transition: transform 0.3s ease; /* Плавна анімація */
+}
+
+h1:hover {
+    transform: scale(1.05); /* Легке збільшення при наведенні */
 }
 
 p {
-    color: #cccccc;
+    color: #34495e; /* Темніший, приємний колір */
+    font-size: 24px;
+    line-height: 1.6; /* Більший міжрядковий інтервал */
+    max-width: 600px; /* Обмеження ширини для читабельності */
+    margin: 20px auto; /* Центрування і відступи */
+    background: rgba(255, 255, 255, 0.9); /* Білий напівпрозорий фон */
+    padding: 20px;
+    border-radius: 15px; /* Закруглені кути */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* М'яка тінь */
+    transition: all 0.3s ease; /* Плавна анімація */
+}
+
+p:hover {
+    transform: translateY(-5px); /* Легкий підйом при наведенні */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Посилена тінь */
 }
