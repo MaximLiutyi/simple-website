@@ -1,16 +1,14 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f0f0f0;
+    background-color: #000000;
+    color: #ffffff;
     text-align: center;
     padding: 20px;
 }
 
 h1 {
-    color: #333;
-    font-size: 36px;
+    color: #ffffff;
 }
 
 p {
-    color: #666;
-    font-size: 18px;
+    color: #cccccc;
 }
