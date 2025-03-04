@@ -28,10 +28,11 @@ jobs:
             sudo mkdir -p /home/${USER}/simple
             sudo chown ${USER}:${USER} /home/${USER}/simple
           "
-          
-          scp -o StrictHostKeyChecking=no -i private_key -r . ${USER}@${HOST}:/home/${USER}/simple/
-          
+
+          rsync -avz --exclude='.git' --exclude='.github' -e "ssh -o StrictHostKeyChecking=no -i private_key" ./ ${USER}@${HOST}:/home/${USER}/simple/
+
           ssh -o StrictHostKeyChecking=no -i private_key ${USER}@${HOST} "
             sudo rm -rf /var/cache/nginx/*
             sudo systemctl restart nginx
           "
+
