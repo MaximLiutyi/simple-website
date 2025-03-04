@@ -12,6 +12,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: List files before deployment
+        run: ls -la
+
       - name: Deploy to EC2
         env:
           PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
@@ -19,12 +22,16 @@ jobs:
           USER: ${{ secrets.EC2_USERNAME }}
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          
           ssh -o StrictHostKeyChecking=no -i private_key ${USER}@${HOST} "
             sudo rm -rf /home/${USER}/simple/*
             sudo mkdir -p /home/${USER}/simple
             sudo chown ${USER}:${USER} /home/${USER}/simple
           "
-          scp -o StrictHostKeyChecking=no -i private_key ./index.html ./styles.css ${USER}@${HOST}:/home/${USER}/simple/
+          
+          scp -o StrictHostKeyChecking=no -i private_key -r . ${USER}@${HOST}:/home/${USER}/simple/
+          
           ssh -o StrictHostKeyChecking=no -i private_key ${USER}@${HOST} "
+            sudo rm -rf /var/cache/nginx/*
             sudo systemctl restart nginx
           "
