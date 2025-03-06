@@ -36,8 +36,7 @@ jobs:
             # Зупинка та видалення старого контейнера
             CONTAINER_ID=\$(sudo docker ps -q --filter 'name=my-website')
             if [ ! -z \"$CONTAINER_ID\" ]; then
-              sudo docker stop my-website
-              sudo docker rm my-website
+              sudo docker stop my-website && sudo docker rm my-website
             fi
 
             # Видалення старого образу
