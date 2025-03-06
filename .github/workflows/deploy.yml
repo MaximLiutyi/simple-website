@@ -34,9 +34,9 @@ jobs:
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${USER}@${HOST} "
             # Зупинка та видалення старого контейнера
-            CONTAINER_ID=\$(sudo docker ps -q --filter 'name=my-website')
-            if [ ! -z \"$CONTAINER_ID\" ]; then
-              sudo docker stop my-website && sudo docker rm my-website
+            if sudo docker ps -aq --filter 'name=my-website' | grep -q .; then
+              sudo docker stop my-website
+              sudo docker rm my-website
             fi
 
             # Видалення старого образу
